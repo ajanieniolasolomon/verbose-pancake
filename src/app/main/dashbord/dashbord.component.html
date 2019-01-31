@@ -1,0 +1,95 @@
+<div class="clr-row">
+    <div class="clr-col-4 gray" (click)="open()">
+        <clr-icon shape="pencil"></clr-icon>
+
+        Add User
+    </div>
+    <div class="clr-col-4 gray">
+        <clr-icon shape="ruler-pencil"></clr-icon>
+
+        Write an Article
+
+    </div>
+    <div class="clr-col-3 gray">
+        <clr-icon shape="image"></clr-icon>
+        Upload Image
+    </div>
+
+</div>
+
+
+<div class="clr-row">
+    <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
+        <div class="card">
+            <div class="card-header">
+                User Details
+            </div>
+            <div class="card-block">
+                <div class="card-title">
+                    <div class="alert alert-danger" role="alert" *ngIf="error">
+                        <div class="alert-items">
+                            <div class="alert-item static">
+                                <div class="alert-icon-wrapper">
+                                    <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                                </div>
+                                <span class="alert-text">
+                                   {{err}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-success" role="alert" *ngIf="user">
+                        <div class="alert-items">
+                            <div class="alert-item static">
+                                <div class="alert-icon-wrapper">
+                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                                </div>
+                                <span class="alert-text">This is loading information from reqres.in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <clr-datagrid>
+                        <clr-dg-column>User ID</clr-dg-column>
+                        <clr-dg-column>First_name</clr-dg-column>
+                        <clr-dg-column>Last_name</clr-dg-column>
+
+                        <ngx-skeleton-loader *ngIf="loading" count="5" appearance="circle" [theme]="{ 'border-radius': '0', height: '20px','display':'block','width':'100%' }"> </ngx-skeleton-loader>
+                        <clr-dg-row *ngFor="let item of user">
+                            <clr-dg-cell>{{item.id}}</clr-dg-cell>
+                            <clr-dg-cell>{{item.first_name}}</clr-dg-cell>
+                            <clr-dg-cell>{{item.last_name}}</clr-dg-cell>
+
+                        </clr-dg-row>
+
+
+                    </clr-datagrid>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<clr-modal [(clrModalOpen)]="basic">
+    <h3 class="modal-title">Add User</h3>
+    <div class="modal-body">
+        <form clrForm [formGroup]="form" (ngSubmit)="onSubmit()">
+            <clr-input-container>
+                <label>Name</label>
+                <input clrInput type="text" formControlName="name" name="example" />
+            </clr-input-container>
+            <clr-input-container>
+                <label>Job</label>
+                <input clrInput type="text" formControlName="job" name="example" />
+            </clr-input-container>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary">ADD</button>
+    </div>
+</clr-modal>

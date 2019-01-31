@@ -1,0 +1,21 @@
+.gray {
+    background: gray;
+    margin: 1px;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    padding: 4px;
+    clr-icon {
+        display: block;
+        margin: 0 auto;
+        zoom: 2;
+    }
+}
+
+.item {
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+}
