@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../shared/api.service';
+import { ApiService } from '@app/shared/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -14,7 +14,8 @@ export class DashbordComponent implements OnInit {
   error;
   basic = false;
   form;
-  chart = [];
+ 
+  list;
   sucess;
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -46,7 +47,7 @@ export class DashbordComponent implements OnInit {
 this.form = this.FORMS();
 
 this.userInfo();
-
+this.getList();
   }
   open() {
     this.basic = true;
@@ -87,5 +88,12 @@ userInfo() {
   }, err => {
 this.error = err;
   });
+}
+getList() {
+  this.service.List.subscribe(res => {
+this.list = res;
+  }, err => {
+    this.error = err;
+      });
 }
 }

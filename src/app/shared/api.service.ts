@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
-import { User,AddUser } from '../types/user';
+import { User,AddUser, List } from '@app/types/user';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -21,6 +21,10 @@ get User(): Observable<User> {
 
 return this.http.post <AddUser>(this.apiUrl + 'api/users', user);
 
+}
+
+get List(): Observable<List>  {
+  return  this.http.get<List>(this.apiUrl + 'api/unknown');
 }
 dailyForecast() {
   return this.http.get(this.weather).pipe(

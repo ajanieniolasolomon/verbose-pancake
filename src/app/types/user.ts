@@ -19,3 +19,20 @@ id?: string;
 createdAt?: string;
 
 }
+
+export interface  List {
+    page: number;
+    per_page: number;
+    total: number;
+total_pages: number;
+data: [ListData];
+}
+
+export interface  ListData {
+    id: number;
+    name: string;
+    year: number;
+    color: string;
+   'pantone_value': string;
+
+}
