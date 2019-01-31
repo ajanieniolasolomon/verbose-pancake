@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../shared/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Chart } from 'chart.js';
+
 @Component({
   selector: 'app-dashbord',
   templateUrl: './dashbord.component.html',
@@ -15,6 +15,7 @@ export class DashbordComponent implements OnInit {
   basic = false;
   form;
   chart = [];
+  sucess;
   constructor(private service: ApiService, private fb: FormBuilder){}
 
   ngOnInit() {
@@ -33,11 +34,14 @@ job: ['', Validators.required],
   });
 }
 onSubmit() {
-  //this.form.reset();
+  // this.form.reset();
   this.basic = false;
   this.service.newUser(this.form.value).subscribe(res => {
-
-this.form.reset();
+this.sucess = this.form.value.name + 'added';
+setTimeout(() => {
+  this.sucess = ''
+}, 4000 );
+ this.form.reset();
   },
 err => {
 

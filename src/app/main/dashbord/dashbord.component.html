@@ -55,7 +55,7 @@
                         <clr-dg-column>First_name</clr-dg-column>
                         <clr-dg-column>Last_name</clr-dg-column>
 
-                        <ngx-skeleton-loader *ngIf="loading" count="5" appearance="circle" [theme]="{ 'border-radius': '0', height: '20px','display':'block','width':'100%' }"> </ngx-skeleton-loader>
+
                         <clr-dg-row *ngFor="let item of user">
                             <clr-dg-cell>{{item.id}}</clr-dg-cell>
                             <clr-dg-cell>{{item.first_name}}</clr-dg-cell>
@@ -93,3 +93,13 @@
         <button type="submit" (click)="onSubmit()" class="btn btn-primary">ADD</button>
     </div>
 </clr-modal>
+<div class="alert alert-success" role="alert" *ngIf="sucess">
+    <div class="alert-items">
+        <div class="alert-item static">
+            <div class="alert-icon-wrapper">
+                <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+            </div>
+            <span class="alert-text">{{sucess}}</span>
+        </div>
+    </div>
+</div>
