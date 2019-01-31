@@ -16,8 +16,33 @@
     </div>
 
 </div>
+<div class="clr-row">
+    <div class="clr-col-lg-3 clr-col-md-12 clr-col-3">
+        <div class="card">
 
-
+            <div>
+                <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                  </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr-col-lg-4 clr-col-md-12 clr-col-4">
+        <div class="card">
+            <div style="display: block">
+                <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [options]="radarChartOptions" [chartType]="radarChartType"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="clr-col-lg-4 clr-col-md-12 clr-col-4">
+        <div class="card">
+            <div style="display: block">
+                <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [options]="radarChartOptions" [chartType]="pieChartType"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="clr-row">
     <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
         <div class="card">
