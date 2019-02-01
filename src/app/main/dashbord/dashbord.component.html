@@ -1,23 +1,26 @@
 <div class="clr-row">
-    <div class="clr-col-4 gray" (click)="open()">
-        <clr-icon shape="pencil"></clr-icon>
-
-        Add User
-    </div>
-    <div class="clr-col-4 gray">
-        <clr-icon shape="ruler-pencil"></clr-icon>
-
-        Write an Article
+    <div class="clr-col-12 clr-col-lg-3 clr-col-md-6 gray">
+        <clr-icon style="color:blue" shape="data-cluster"></clr-icon>
+        Capacity
+        <p>105GB</p>
 
     </div>
-    <div class="clr-col-3 gray">
-        <clr-icon shape="image"></clr-icon>
-        Upload Image
+    <div class="clr-col-12 clr-col-lg-3 clr-col-md-6 gray">
+        <clr-icon style="color:green" shape="wallet"></clr-icon>
+
+        Revenue
+        <p>₦4780</p>
     </div>
+    <div class="clr-col-12 clr-col-lg-3 clr-col-md-6 gray">
+        <clr-icon style="color:red" shape="curve-chart"></clr-icon>
+        Error
+        <p>23</p>
+    </div>
+
 
 </div>
 <div class="clr-row">
-    <div class="clr-col-lg-3 clr-col-md-12 clr-col-12">
+    <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
         <div class="card">
 
             <div>
@@ -28,106 +31,20 @@
             </div>
         </div>
     </div>
-    <div class="clr-col-lg-4 clr-col-md-12 clr-col-12">
+</div>
+<div class="clr-row">
+
+    <div class="clr-col-lg-6 clr-col-md-12 clr-col-12">
         <div class="card">
             <div style="display: block">
                 <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [options]="radarChartOptions" [chartType]="radarChartType"></canvas>
             </div>
         </div>
     </div>
-    <div class="clr-col-lg-4 clr-col-md-12 clr-col-12">
+    <div class="clr-col-lg-6 clr-col-md-12 clr-col-12">
         <div class="card">
             <div style="display: block">
                 <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [options]="radarChartOptions" [chartType]="pieChartType"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="clr-row">
-    <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
-        <div class="card">
-            <div class="card-header">
-                User Details
-            </div>
-            <div class="card-block">
-                <div class="card-title">
-                    <div class="alert alert-danger" role="alert" *ngIf="error">
-                        <div class="alert-items">
-                            <div class="alert-item static">
-                                <div class="alert-icon-wrapper">
-                                    <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
-                                </div>
-                                <span class="alert-text">
-                                   {{err}}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="alert alert-success" role="alert" *ngIf="user">
-                        <div class="alert-items">
-                            <div class="alert-item static">
-                                <div class="alert-icon-wrapper">
-                                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
-                                </div>
-                                <span class="alert-text">This is loading information from reqres.in</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-text">
-                    <clr-datagrid>
-                        <clr-dg-column>User ID</clr-dg-column>
-                        <clr-dg-column>First_name</clr-dg-column>
-                        <clr-dg-column>Last_name</clr-dg-column>
-
-                        <span *ngIf="!user" class="spinner">
-                            Loading...
-                        </span>
-                        <clr-dg-row *ngFor="let item of user">
-                            <clr-dg-cell>{{item.id}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.first_name}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.last_name}}</clr-dg-cell>
-
-                        </clr-dg-row>
-
-
-                    </clr-datagrid>
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="clr-row">
-    <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
-        <div class="card">
-            <div class="card-header">
-                List
-            </div>
-            <div class="card-text">
-                <clr-datagrid>
-                    <clr-dg-column>ID</clr-dg-column>
-                    <clr-dg-column>Name</clr-dg-column>
-                    <clr-dg-column>Creation date</clr-dg-column>
-                    <clr-dg-column>Favorite color</clr-dg-column>
-                    <span *ngIf="!list" class="spinner">
-                        Loading...
-                    </span>
-
-                    <div *ngIf="list">
-
-                        <clr-dg-row *ngFor="let user of list.data">
-                            <clr-dg-cell>{{user.id}}</clr-dg-cell>
-                            <clr-dg-cell>{{user.name}}</clr-dg-cell>
-                            <clr-dg-cell>{{user.year}}</clr-dg-cell>
-                            <clr-dg-cell>{{user.color}}</clr-dg-cell>
-                        </clr-dg-row>
-                    </div>
-
-                    <clr-dg-footer>{{list.total_pages}} list</clr-dg-footer>
-                </clr-datagrid>
             </div>
         </div>
     </div>

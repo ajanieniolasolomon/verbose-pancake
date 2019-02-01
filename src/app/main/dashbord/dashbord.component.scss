@@ -1,14 +1,20 @@
 .gray {
-    background: gray;
+    background: rgb(230, 226, 226);
     margin: 1px;
-    color: white;
-    text-align: center;
+    color: black;
+    text-align: right;
     line-height: 1.5;
-    padding: 4px;
+    padding: 8px;
     clr-icon {
-        display: block;
-        margin: 0 auto;
-        zoom: 2;
+        margin: 10px 20px;
+        zoom: 1.9;
+        color: RED;
+        float: left;
+    }
+    p {
+        font-size: 32px;
+        font-weight: bold;
+        color: rgb(3, 1, 1);
     }
 }
 

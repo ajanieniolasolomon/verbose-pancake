@@ -15,16 +15,38 @@ collapsed = true;
 
 this.sideNav = [{
 name: 'DashBoard',
-icon: 'home',
+icon: 'dashboard',
 link: '',
 
 
 }, {
-  name: 'Articles',
-  icon: 'book',
+  name: 'User Profile',
+  icon: 'user',
   link: '/articles'
 
-  }];
+  },
+  {
+    name: 'Table List',
+    icon: 'list',
+    link: '/table'
+  }
+,
+{
+  name: 'Typography',
+  icon: 'text',
+  link: '/typo'
+},
+{
+  name: 'Icon',
+  icon: 'objects',
+  link: '/icon'
+},
+{
+  name: 'Notification',
+  icon: 'bell',
+  link: '/note'
+}
+];
 
 
   }

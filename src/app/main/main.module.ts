@@ -5,10 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { ArtclesComponent } from './artcles/artcles.component';
 import { ApiService } from '@app/shared/api.service';
+import { TableComponent } from './table/table.component';
+import { TypoComponent } from './typo/typo.component';
+import { IconComponent } from './icon/icon.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 @NgModule({
-  declarations: [DashbordComponent, HomeComponent, ArtclesComponent],
+  declarations: [DashbordComponent, HomeComponent, ArtclesComponent, TableComponent, TypoComponent, IconComponent, NotificationComponent],
   imports: [
 
     SharedModule ,
