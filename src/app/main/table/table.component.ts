@@ -19,21 +19,15 @@ export class TableComponent implements OnInit {
   ngOnInit() {
 
 this.userInfo();
-this.getList();
+
   }
   userInfo() {
     this.service.User.subscribe(res => {
       this.loading = false;
-    this.user = res.data;
+    this.user = res;
     }, err => {
   this.error = err;
     });
   }
-  getList() {
-    this.service.List.subscribe(res => {
-  this.list = res;
-    }, err => {
-      this.error = err;
-        });
-  }
+
 }

@@ -4733,6 +4733,11 @@ ng2-charts@^1.6.0:
   dependencies:
     chart.js "^2.6.0"
 
+ngx-quicklink@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/ngx-quicklink/-/ngx-quicklink-0.0.5.tgz#86d218f3781e36b02fed0074f62d958408061e07"
+  integrity sha512-sRs7I0ofMKpTa5I4EUyH5j2x4jZP2r3tUM0Lslc+mlXUtuENSnAluOcrJhU4IG+x3Av8y0J/9mNQTV05vleWaA==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

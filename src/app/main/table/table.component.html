@@ -1,0 +1,17 @@
+<clr-datagrid>
+    <clr-dg-column>User ID</clr-dg-column>
+    <clr-dg-column>First Name</clr-dg-column>
+    <clr-dg-column>Last Name</clr-dg-column>
+    <clr-dg-column>Avatar</clr-dg-column>
+
+
+    <clr-dg-row *ngFor="let users of user?.data">
+        <clr-dg-cell>{{users.id}}</clr-dg-cell>
+        <clr-dg-cell>{{users.first_name}}</clr-dg-cell>
+        <clr-dg-cell>{{users.last_name}}</clr-dg-cell>
+        <clr-dg-cell><img [src]="users.avatar" style="width: 50px;height: 50px;border-radius: 50%"></clr-dg-cell>
+
+    </clr-dg-row>
+
+
+</clr-datagrid>

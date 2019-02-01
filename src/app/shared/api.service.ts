@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
-import { User,AddUser, List } from '@app/types/user';
-import { map } from 'rxjs/operators';
+import { User, MUser, List,Info } from '@app/types/user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,21 +17,27 @@ get User(): Observable<User> {
   return this.http.get<User>(this.apiUrl + 'api/users?page=2');
 }
 
- newUser(user): Observable<AddUser>  {
+ newUser(user): Observable<MUser>  {
 
-return this.http.post <AddUser>(this.apiUrl + 'api/users', user);
+return this.http.post <MUser>(this.apiUrl + 'api/users', user);
 
 }
 
 get List(): Observable<List>  {
   return  this.http.get<List>(this.apiUrl + 'api/unknown');
 }
-dailyForecast() {
-  return this.http.get(this.weather).pipe(
-    map(result => result)
-  );
 
+UpdateUser(data): Observable<MUser> {
+return this.http.put<MUser>(this.apiUrl + 'api/users', data);
 }
-
+UpdateUserPatch(data): Observable<MUser> {
+return this.http.patch<MUser>(this.apiUrl + 'api/users', data);
+}
+RemoveUser(id) {
+  return this.http.delete(this.apiUrl + 'api/users', id);
+}
+getSingleUser(id) {
+  return  this.http.get(this.apiUrl + 'api/users/'+ id);
+}
 }
 

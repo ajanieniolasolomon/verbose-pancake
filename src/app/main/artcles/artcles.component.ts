@@ -7,18 +7,18 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./artcles.component.scss']
 })
 export class ArtclesComponent implements OnInit {
-
   error;
- 
   form;
-
-
   sucess;
+  user;
+  name = 'SOLA';
+  job = 'CEO'
   constructor(private service: ApiService, private fb: FormBuilder){}
 
   ngOnInit() {
     this.form = this.FORMS();
-
+    this.getSingleUser(2);
+console.log(this.value);
       }
 
     FORMS() {
@@ -47,6 +47,50 @@ export class ArtclesComponent implements OnInit {
     );
 
     }
+get value() {
+  return this.form.valid;
+}
+onUpdate() {
+  this.service.UpdateUser(this.form.value).subscribe(res => {
+    this.sucess = this.form.value.name + 'Updated';
+    setTimeout(() => {
+      this.sucess =  '';
+    }, 4000 );
+     this.form.reset();
+      },
+    err => {
 
+    this.error = 'Error';
+    setTimeout(() => {
+      this.error = '';
+    }, 4000 );
 
+    }
+    );
+
+}
+onRemove(){
+this.service.RemoveUser(2).subscribe(res => {
+  this.sucess = 'User Remove';
+  setTimeout(() => {
+    this.sucess =  '';
+  }, 4000 );
+   this.form.reset();
+    },
+  err => {
+
+  this.error = ' User Removed';
+  setTimeout(() => {
+    this.error = '';
+  }, 4000 );
+
+  }
+  );
+}
+getSingleUser(id) {
+this.service.getSingleUser(id).subscribe((res: any )=>{
+this.user = res.data;
+console.log(res);
+});
+}
 }

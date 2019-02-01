@@ -20,7 +20,7 @@ link: '',
 
 
 }, {
-  name: 'User Profile',
+  name: 'CRUD Operation',
   icon: 'user',
   link: '/articles'
 

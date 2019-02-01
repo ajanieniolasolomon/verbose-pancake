@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
 import { HttpClientModule } from '@angular/common/http';
+import {QuicklinkModule} from 'ngx-quicklink';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
@@ -12,6 +13,7 @@ import { ChartsModule } from 'ng2-charts';
     ClarityModule,
     HttpClientModule,
     ChartsModule,
+    QuicklinkModule,
     FormsModule, ReactiveFormsModule
   ],
   exports: [
@@ -20,6 +22,7 @@ import { ChartsModule } from 'ng2-charts';
     HttpClientModule,
     ChartsModule,
     FormsModule,
+    QuicklinkModule,
     ReactiveFormsModule
   ]
 })

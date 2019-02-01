@@ -12,12 +12,12 @@ export interface Info {
 'last_name': string;
 avatar: string; }
 
-export interface AddUser {
+export interface MUser {
 name: string;
 job: string;
 id?: string;
 createdAt?: string;
-
+updatedAt?: string;
 }
 
 export interface  List {

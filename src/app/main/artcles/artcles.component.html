@@ -1,5 +1,19 @@
+<div class="alert alert-success" role="alert" *ngIf="sucess">
+    <div class="alert-items">
+        <div class="alert-item static">
+            <div class="alert-icon-wrapper">
+                <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+            </div>
+            <span class="alert-text">
+               {{sucess}}
+            </span>
+        </div>
+    </div>
+</div>
+
+
 <div class="clr-row">
-    <div class="clr-col-lg-5 clr-col-md-8 clr-col-12">
+    <div class="clr-col-lg-6 clr-col-md-8 clr-col-12">
         <div class="card">
             <div class="card-header">
                 Add User
@@ -23,8 +37,71 @@
             </div>
             <div class="card-footer">
 
-                <button type="submit" (click)="onSubmit()" class="btn btn-primary">ADD</button>
+                <button [disabled]="!value" type="submit" (click)="onSubmit()" class="btn btn-primary">ADD</button>
+            </div>
+        </div>
+    </div>
+    <div class="clr-col-lg-6 clr-col-md-8 clr-col-12">
+        <div class="card">
+            <div class="card-header">
+                Update
+            </div>
+            <div class="card-block">
+
+                <div class="card-text">
+                    <form clrForm [formGroup]="form" (ngSubmit)="onUpdate()">
+                        <clr-input-container>
+                            <label>Name</label>
+                            <input [value]="name" clrInput type="text" formControlName="name" name="example" />
+                        </clr-input-container>
+                        <clr-input-container>
+                            <label>Job</label>
+                            <input [value]="job" clrInput type="text" formControlName="job" name="example" />
+                        </clr-input-container>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="card-footer">
+
+                <button type="submit" (click)="onUpdate()" class="btn btn-secondary">Update</button>
             </div>
         </div>
     </div>
 </div>
+<div class="alert alert-danger" role="alert" *ngIf="error">
+    <div class="alert-items">
+        <div class="alert-item static">
+            <div class="alert-icon-wrapper">
+                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+            </div>
+            <span class="alert-text">
+             {{error}}
+            </span>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+
+            <th>First_Name</th>
+            <th>Last_name</th>
+            <th>Avatar</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="user">
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td><img [src]="user.avatar" style="width: 50px;height: 50px;border-radius: 50%"></td>
+            <td> <button type="submit" (click)="onRemove()" class="btn btn-danger">Remove</button></td>
+        </tr>
+
+    </tbody>
+</table>
